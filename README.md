@@ -16,7 +16,8 @@ https://github.com/protocolbuffers/protobuf/releases/download/v3.15.6/protoc-3.1
 protoc.exe --java_out=${OUTPUT_DIR} path/to/your/proto/file
 ```
 ## 2. 编写JAVA
-### 2.1 引用jar
+### 2.1 引用依赖
+确保运行时的版本号与协议的版本号匹配（或比其新）
 ```
 <dependency>
   <groupId>com.google.protobuf</groupId>
@@ -24,3 +25,12 @@ protoc.exe --java_out=${OUTPUT_DIR} path/to/your/proto/file
   <version>3.15.3</version>
 </dependency>
 ``` 
+如果要使用protobuf JsonFormat之类的功能，请在protobuf-java-util包上添加一个依赖项：  
+```
+<dependency>
+  <groupId>com.google.protobuf</groupId>
+  <artifactId>protobuf-java-util</artifactId>
+  <version>3.15.3</version>
+</dependency>
+```
+
